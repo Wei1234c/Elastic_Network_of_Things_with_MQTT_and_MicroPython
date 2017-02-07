@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="utf-8" />
+<html><head><meta charset="utf-8">
 <title>Network of Things test</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
@@ -11742,15 +11741,15 @@ div#notebook {
     page-break-inside: avoid; 
   }
 }
-</style>
+</style><!-- Custom stylesheet, it must be in the same directory as the html file -->
 
-<!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="custom.css">
 
-<!-- Loading mathjax macro -->
-<!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-    <!-- MathJax configuration -->
+<link rel="stylesheet" href="custom.css"><!-- Loading mathjax macro --><!-- Load mathjax -->
+
+
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script><!-- MathJax configuration -->
+    
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
@@ -11767,8 +11766,8 @@ div#notebook {
             linebreaks: { automatic: true }
         }
     });
-    </script>
-    <!-- End of mathjax configuration --></head>
+    </script><!-- End of mathjax configuration --></head>
+
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
@@ -11778,7 +11777,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Network-of-Things-test">Network of Things test<a class="anchor-link" href="#Network-of-Things-test">&#182;</a></h1>
+<h1 id="Network-of-Things-test">Network of Things test<a class="anchor-link" href="#Network-of-Things-test">¶</a></h1>
 </div>
 </div>
 </div>
@@ -11802,7 +11801,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Getting-Started">Getting Started<a class="anchor-link" href="#Getting-Started">&#182;</a></h2><p>What this notebook does:</p>
+<h2 id="Getting-Started">Getting Started<a class="anchor-link" href="#Getting-Started">¶</a></h2><p>What this notebook does:</p>
 <ul>
 <li>Using a client on PC</li>
 <li>List connected nodes</li>
@@ -11822,14 +11821,14 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">time</span>
  
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">pardir</span><span class="p">,</span> <span class="s1">&#39;codes&#39;</span><span class="p">,</span> <span class="s1">&#39;client&#39;</span><span class="p">)))</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">pardir</span><span class="p">,</span> <span class="s1">&#39;codes&#39;</span><span class="p">,</span> <span class="s1">&#39;node&#39;</span><span class="p">)))</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">pardir</span><span class="p">,</span> <span class="s1">&#39;codes&#39;</span><span class="p">,</span> <span class="s1">&#39;shared&#39;</span><span class="p">)))</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">pardir</span><span class="p">,</span> <span class="s1">&#39;codes&#39;</span><span class="p">,</span> <span class="s1">&#39;micropython&#39;</span><span class="p">)))</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">pardir</span><span class="p">,</span> <span class="s1">'codes'</span><span class="p">,</span> <span class="s1">'client'</span><span class="p">)))</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">pardir</span><span class="p">,</span> <span class="s1">'codes'</span><span class="p">,</span> <span class="s1">'node'</span><span class="p">)))</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">pardir</span><span class="p">,</span> <span class="s1">'codes'</span><span class="p">,</span> <span class="s1">'shared'</span><span class="p">)))</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">pardir</span><span class="p">,</span> <span class="s1">'codes'</span><span class="p">,</span> <span class="s1">'micropython'</span><span class="p">)))</span>
  
 <span class="kn">import</span> <span class="nn">client</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">OrderedDict</span>
@@ -11845,7 +11844,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Start-client">Start client<a class="anchor-link" href="#Start-client">&#182;</a></h3>
+<h3 id="Start-client">Start client<a class="anchor-link" href="#Start-client">¶</a></h3>
 </div>
 </div>
 </div>
@@ -11854,12 +11853,11 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">the_client</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">the_client</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
 <span class="n">the_client</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 
-<span class="k">while</span> <span class="ow">not</span> <span class="n">the_client</span><span class="o">.</span><span class="n">status</span><span class="p">[</span><span class="s1">&#39;Is connected&#39;</span><span class="p">]:</span>            
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Node not ready yet.&#39;</span><span class="p">)</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">the_client</span><span class="o">.</span><span class="n">status</span><span class="p">[</span><span class="s1">'Is connected'</span><span class="p">]:</span>            <br>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Node not ready yet.'</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11874,17 +11872,7 @@ div#notebook {
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>My name is Client_366
-
-Sending 277 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;set connection name&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:02:17.079900&#39;), (&#39;kwargs&#39;, {&#39;name&#39;: &#39;Client_366&#39;}), (&#39;message_id&#39;, &#39;2017-02-07 15:02:17.079900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;Hub&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-[Connected: (&#39;192.168.0.114&#39;, 1883)]
-[Listen to messages]
-Node not ready yet.
-</pre>
+<pre><span style="color: red;">My name is Client_366</span><br><br>Sending 277 bytes<br>Message:<br>OrderedDict([('command', 'set connection name'), ('correlation_id', '2017-02-07 15:02:17.079900'), ('kwargs', {'name': 'Client_366'}), ('message_id', '2017-02-07 15:02:17.079900'), ('message_type', 'command'), ('need_result', True), ('receiver', 'Hub'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br style="color: red;"><span style="color: red;">[Connected: ('192.168.0.114', 1883)]</span><br>[Listen to messages]<br>Node not ready yet.<br></pre>
 </div>
 </div>
 
@@ -11897,7 +11885,7 @@ Node not ready yet.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Prepare-messages">Prepare messages<a class="anchor-link" href="#Prepare-messages">&#182;</a></h3>
+<h3 id="Prepare-messages">Prepare messages<a class="anchor-link" href="#Prepare-messages">¶</a></h3>
 </div>
 </div>
 </div>
@@ -11906,17 +11894,17 @@ Node not ready yet.
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># messages _____________________________________________</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># messages _____________________________________________</span>
 <span class="n">messages</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
 
-<span class="n">messages</span><span class="p">[</span><span class="s1">&#39;read_GPIOs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;message_type&#39;</span><span class="p">:</span> <span class="s1">&#39;command&#39;</span><span class="p">,</span>
-                          <span class="s1">&#39;command&#39;</span><span class="p">:</span> <span class="s1">&#39;read GPIOs&#39;</span><span class="p">,</span>
-                          <span class="s1">&#39;kwargs&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;pins&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">]},</span>
-                          <span class="s1">&#39;need_result&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+<span class="n">messages</span><span class="p">[</span><span class="s1">'read_GPIOs'</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'message_type'</span><span class="p">:</span> <span class="s1">'command'</span><span class="p">,</span>
+                          <span class="s1">'command'</span><span class="p">:</span> <span class="s1">'read GPIOs'</span><span class="p">,</span>
+                          <span class="s1">'kwargs'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'pins'</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">]},</span>
+                          <span class="s1">'need_result'</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
 
-<span class="n">messages</span><span class="p">[</span><span class="s1">&#39;blink_led&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;message_type&#39;</span><span class="p">:</span> <span class="s1">&#39;command&#39;</span><span class="p">,</span>
-                         <span class="s1">&#39;command&#39;</span><span class="p">:</span> <span class="s1">&#39;blink led&#39;</span><span class="p">,</span>
-                         <span class="s1">&#39;kwargs&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;times&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;forever&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;on_seconds&#39;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;off_seconds&#39;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}}</span>
+<span class="n">messages</span><span class="p">[</span><span class="s1">'blink_led'</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'message_type'</span><span class="p">:</span> <span class="s1">'command'</span><span class="p">,</span>
+                         <span class="s1">'command'</span><span class="p">:</span> <span class="s1">'blink led'</span><span class="p">,</span>
+                         <span class="s1">'kwargs'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'times'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">'forever'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">'on_seconds'</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">'off_seconds'</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}}</span>
 </pre></div>
 
 </div>
@@ -11929,21 +11917,21 @@ Node not ready yet.
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># messages[&#39;write_GPIOs&#39;] = {&#39;message_type&#39;: &#39;command&#39;,</span>
-                           <span class="c1"># &#39;command&#39;: &#39;write GPIOs&#39;,</span>
-                           <span class="c1"># &#39;kwargs&#39;: {&#39;pins_and_values&#39;: [(2, 0), (2, 1), (2, 0),]}} </span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># messages['write_GPIOs'] = {'message_type': 'command',</span>
+                           <span class="c1"># 'command': 'write GPIOs',</span>
+                           <span class="c1"># 'kwargs': {'pins_and_values': [(2, 0), (2, 1), (2, 0),]}} </span>
 
-<span class="c1"># messages[&#39;test eval&#39;] = {&#39;message_type&#39;: &#39;eval&#39;,</span>
-                         <span class="c1"># &#39;to_evaluate&#39;: &#39;2+3&#39;,</span>
-                         <span class="c1"># &#39;need_result&#39;: True}                                   </span>
+<span class="c1"># messages['test eval'] = {'message_type': 'eval',</span>
+                         <span class="c1"># 'to_evaluate': '2+3',</span>
+                         <span class="c1"># 'need_result': True}                                   </span>
 
-<span class="c1"># messages[&#39;test exec&#39;] = {&#39;message_type&#39;: &#39;exec&#39;,</span>
-                         <span class="c1"># &#39;to_exec&#39;: &#39;print(&quot;Testing exec !&quot;)&#39;}</span>
+<span class="c1"># messages['test exec'] = {'message_type': 'exec',</span>
+                         <span class="c1"># 'to_exec': 'print("Testing exec !")'}</span>
 
-<span class="c1"># with open(&#39;script_to_deploy.py&#39;) as f:</span>
+<span class="c1"># with open('script_to_deploy.py') as f:</span>
     <span class="c1"># script = f.read()        </span>
-<span class="c1"># messages[&#39;test upload script&#39;] = {&#39;message_type&#39;: &#39;script&#39;, </span>
-                                  <span class="c1"># &#39;script&#39;: script} </span>
+<span class="c1"># messages['test upload script'] = {'message_type': 'script', </span>
+                                  <span class="c1"># 'script': script} </span>
 </pre></div>
 
 </div>
@@ -11956,7 +11944,7 @@ Node not ready yet.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="List-connected-nodes">List connected nodes<a class="anchor-link" href="#List-connected-nodes">&#182;</a></h3>
+<h3 id="List-connected-nodes">List connected nodes<a class="anchor-link" href="#List-connected-nodes">¶</a></h3>
 </div>
 </div>
 </div>
@@ -11965,12 +11953,12 @@ Node not ready yet.
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">the_client</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">worker</span><span class="o">.</span><span class="n">roll_call</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">the_client</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">worker</span><span class="o">.</span><span class="n">roll_call</span><span class="p">()</span>
 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">remote_nodes</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">the_client</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">worker</span><span class="o">.</span><span class="n">contacts</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">[____________ Connected nodes ____________]</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Connected nodes:</span><span class="se">\n</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">remote_nodes</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">[____________ Connected nodes ____________]</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">Connected nodes:</span><span class="se">\n</span><span class="si">{}</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">remote_nodes</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -11985,61 +11973,7 @@ Node not ready yet.
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>
-Sending 249 bytes
-Message:
-OrderedDict([(&#39;correlation_id&#39;, &#39;2017-02-07 15:02:29.200900&#39;), (&#39;function&#39;, &#39;check_in&#39;), (&#39;kwargs&#39;, {&#39;caller&#39;: &#39;Client_366&#39;}), (&#39;message_id&#39;, &#39;2017-02-07 15:02:29.200900&#39;), (&#39;message_type&#39;, &#39;function&#39;), (&#39;receiver&#39;, &#39;Hub&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Data received: 249 bytes
-Message:
-OrderedDict([(&#39;correlation_id&#39;, &#39;2017-02-07 15:02:29.200900&#39;), (&#39;function&#39;, &#39;check_in&#39;), (&#39;kwargs&#39;, {&#39;caller&#39;: &#39;Client_366&#39;}), (&#39;message_id&#39;, &#39;2017-02-07 15:02:29.200900&#39;), (&#39;message_type&#39;, &#39;function&#39;), (&#39;receiver&#39;, &#39;Hub&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Sending 172 bytes
-
-Data received: 190 bytes
-Message:
-OrderedDict([(&#39;function&#39;, &#39;register_contact&#39;), (&#39;kwargs&#39;, {&#39;name&#39;: &#39;NodeMCU_f1d30800&#39;, &#39;contact_id&#39;: &#39;NodeMCU_f1d30800&#39;}), (&#39;message_type&#39;, &#39;function&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;NodeMCU_f1d30800&#39;)])
-
-
-Data received: 178 bytes
-Message:
-OrderedDict([(&#39;function&#39;, &#39;register_contact&#39;), (&#39;kwargs&#39;, {&#39;name&#39;: &#39;NodeMCU_8a00&#39;, &#39;contact_id&#39;: &#39;NodeMCU_8a00&#39;}), (&#39;message_type&#39;, &#39;function&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;NodeMCU_8a00&#39;)])
-
-
-Data received: 190 bytes
-Message:
-OrderedDict([(&#39;function&#39;, &#39;register_contact&#39;), (&#39;kwargs&#39;, {&#39;name&#39;: &#39;NodeMCU_d1e0a200&#39;, &#39;contact_id&#39;: &#39;NodeMCU_d1e0a200&#39;}), (&#39;message_type&#39;, &#39;function&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;NodeMCU_d1e0a200&#39;)])
-
-
-Data received: 187 bytes
-Message:
-OrderedDict([(&#39;function&#39;, &#39;register_contact&#39;), (&#39;kwargs&#39;, {&#39;name&#39;: &#39;NodeMCU_1dsc000&#39;, &#39;contact_id&#39;: &#39;NodeMCU_1dsc000&#39;}), (&#39;message_type&#39;, &#39;function&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;NodeMCU_1dsc000&#39;)])
-
-
-Data received: 190 bytes
-Message:
-OrderedDict([(&#39;function&#39;, &#39;register_contact&#39;), (&#39;kwargs&#39;, {&#39;name&#39;: &#39;NodeMCU_a1a5c000&#39;, &#39;contact_id&#39;: &#39;NodeMCU_a1a5c000&#39;}), (&#39;message_type&#39;, &#39;function&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;NodeMCU_a1a5c000&#39;)])
-
-
-Data received: 184 bytes
-Message:
-OrderedDict([(&#39;function&#39;, &#39;register_contact&#39;), (&#39;kwargs&#39;, {&#39;name&#39;: &#39;NodeMCU_edca00&#39;, &#39;contact_id&#39;: &#39;NodeMCU_edca00&#39;}), (&#39;message_type&#39;, &#39;function&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;NodeMCU_edca00&#39;)])
-
-
-Data received: 172 bytes
-Message:
-OrderedDict([(&#39;function&#39;, &#39;register_contact&#39;), (&#39;kwargs&#39;, {&#39;name&#39;: &#39;Client_366&#39;, &#39;contact_id&#39;: &#39;Client_366&#39;}), (&#39;message_type&#39;, &#39;function&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-[____________ Connected nodes ____________]
-
-
-Connected nodes:
-[&#39;Client_366&#39;, &#39;NodeMCU_1dsc000&#39;, &#39;NodeMCU_8a00&#39;, &#39;NodeMCU_a1a5c000&#39;, &#39;NodeMCU_d1e0a200&#39;, &#39;NodeMCU_edca00&#39;, &#39;NodeMCU_f1d30800&#39;]
-
-</pre>
+<pre>Sending 249 bytes<br>Message:<br>OrderedDict([('correlation_id', '2017-02-07 15:02:29.200900'), ('function', 'check_in'), ('kwargs', {'caller': 'Client_366'}), ('message_id', '2017-02-07 15:02:29.200900'), ('message_type', 'function'), ('receiver', 'Hub'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Data received: 249 bytes<br>Message:<br>OrderedDict([('correlation_id', '2017-02-07 15:02:29.200900'), ('function', 'check_in'), ('kwargs', {'caller': 'Client_366'}), ('message_id', '2017-02-07 15:02:29.200900'), ('message_type', 'function'), ('receiver', 'Hub'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Sending 172 bytes<br><br>Data received: 190 bytes<br>Message:<br>OrderedDict([('function', 'register_contact'), ('kwargs', {'name': 'NodeMCU_f1d30800', 'contact_id': 'NodeMCU_f1d30800'}), ('message_type', 'function'), ('receiver', 'Client_366'), ('sender', 'NodeMCU_f1d30800')])<br><br><br>Data received: 178 bytes<br>Message:<br>OrderedDict([('function', 'register_contact'), ('kwargs', {'name': 'NodeMCU_8a00', 'contact_id': 'NodeMCU_8a00'}), ('message_type', 'function'), ('receiver', 'Client_366'), ('sender', 'NodeMCU_8a00')])<br><br><br>Data received: 190 bytes<br>Message:<br>OrderedDict([('function', 'register_contact'), ('kwargs', {'name': 'NodeMCU_d1e0a200', 'contact_id': 'NodeMCU_d1e0a200'}), ('message_type', 'function'), ('receiver', 'Client_366'), ('sender', 'NodeMCU_d1e0a200')])<br><br><br>Data received: 187 bytes<br>Message:<br>OrderedDict([('function', 'register_contact'), ('kwargs', {'name': 'NodeMCU_1dsc000', 'contact_id': 'NodeMCU_1dsc000'}), ('message_type', 'function'), ('receiver', 'Client_366'), ('sender', 'NodeMCU_1dsc000')])<br><br><br>Data received: 190 bytes<br>Message:<br>OrderedDict([('function', 'register_contact'), ('kwargs', {'name': 'NodeMCU_a1a5c000', 'contact_id': 'NodeMCU_a1a5c000'}), ('message_type', 'function'), ('receiver', 'Client_366'), ('sender', 'NodeMCU_a1a5c000')])<br><br><br>Data received: 184 bytes<br>Message:<br>OrderedDict([('function', 'register_contact'), ('kwargs', {'name': 'NodeMCU_edca00', 'contact_id': 'NodeMCU_edca00'}), ('message_type', 'function'), ('receiver', 'Client_366'), ('sender', 'NodeMCU_edca00')])<br><br><br>Data received: 172 bytes<br>Message:<br>OrderedDict([('function', 'register_contact'), ('kwargs', {'name': 'Client_366', 'contact_id': 'Client_366'}), ('message_type', 'function'), ('receiver', 'Client_366'), ('sender', 'Client_366')])<br><br><br>[____________ Connected nodes ____________]<br><br><br><span style="color: red;">Connected nodes:</span><br style="color: red;"><span style="color: red;">['Client_366', 'NodeMCU_1dsc000', 'NodeMCU_8a00', 'NodeMCU_a1a5c000', 'NodeMCU_d1e0a200', 'NodeMCU_edca00', 'NodeMCU_f1d30800']</span><br><br></pre>
 </div>
 </div>
 
@@ -12052,7 +11986,7 @@ Connected nodes:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Read-one-GPIO-pin">Read one GPIO pin<a class="anchor-link" href="#Read-one-GPIO-pin">&#182;</a></h3>
+<h3 id="Read-one-GPIO-pin">Read one GPIO pin<a class="anchor-link" href="#Read-one-GPIO-pin">¶</a></h3>
 </div>
 </div>
 </div>
@@ -12061,9 +11995,8 @@ Connected nodes:
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">remote_node</span> <span class="ow">in</span> <span class="n">remote_nodes</span><span class="p">:</span>
-    <span class="n">_</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">the_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">remote_node</span><span class="p">,</span> <span class="n">messages</span><span class="p">[</span><span class="s1">&#39;read_GPIOs&#39;</span><span class="p">])</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">GPIO status for </span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">remote_node</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">()))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">remote_node</span> <span class="ow">in</span> <span class="n">remote_nodes</span><span class="p">:</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">the_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">remote_node</span><span class="p">,</span> <span class="n">messages</span><span class="p">[</span><span class="s1">'read_GPIOs'</span><span class="p">])</span> <br>    <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">GPIO status for </span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">remote_node</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">()))</span>
 </pre></div>
 
 </div>
@@ -12078,112 +12011,7 @@ Connected nodes:
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>
-Sending 286 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;read GPIOs&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:02:38.741900&#39;), (&#39;kwargs&#39;, {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}), (&#39;message_id&#39;, &#39;2017-02-07 15:02:38.741900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Data received: 286 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;read GPIOs&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:02:38.741900&#39;), (&#39;kwargs&#39;, {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}), (&#39;message_id&#39;, &#39;2017-02-07 15:02:38.741900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Processed result:
-OrderedDict([(&#39;correlation_id&#39;, &#39;2017-02-07 15:02:38.741900&#39;), (&#39;message_id&#39;, &#39;2017-02-07 15:02:39.678900&#39;), (&#39;message_type&#39;, &#39;result&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;result&#39;, &#39;Not applicable.&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Sending 223 bytes
-Message:
-OrderedDict([(&#39;correlation_id&#39;, &#39;2017-02-07 15:02:38.741900&#39;), (&#39;message_id&#39;, &#39;2017-02-07 15:02:39.678900&#39;), (&#39;message_type&#39;, &#39;result&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;result&#39;, &#39;Not applicable.&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Data received: 223 bytes
-Message:
-OrderedDict([(&#39;correlation_id&#39;, &#39;2017-02-07 15:02:38.741900&#39;), (&#39;message_id&#39;, &#39;2017-02-07 15:02:39.678900&#39;), (&#39;message_type&#39;, &#39;result&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;result&#39;, &#39;Not applicable.&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-GPIO status for Client_366: Not applicable.
-
-
-Sending 291 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;read GPIOs&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:02:40.711900&#39;), (&#39;kwargs&#39;, {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}), (&#39;message_id&#39;, &#39;2017-02-07 15:02:40.711900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;NodeMCU_1dsc000&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Data received: 248 bytes
-Message:
-OrderedDict([(&#39;correlation_id&#39;, &#39;2017-02-07 15:02:40.711900&#39;), (&#39;message_id&#39;, &#39;99527&#39;), (&#39;message_type&#39;, &#39;result&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_1dsc000&#39;), (&#39;result&#39;, [[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]), (&#39;sender&#39;, &#39;NodeMCU_1dsc000&#39;)])
-
-GPIO status for NodeMCU_1dsc000: [[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]
-
-
-Sending 288 bytes
-
-Message:
-OrderedDict([(&#39;command&#39;, &#39;read GPIOs&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:02:41.966900&#39;), (&#39;kwargs&#39;, {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}), (&#39;message_id&#39;, &#39;2017-02-07 15:02:41.966900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;NodeMCU_8a00&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Data received: 242 bytes
-Message:
-OrderedDict([(&#39;correlation_id&#39;, &#39;2017-02-07 15:02:41.966900&#39;), (&#39;message_id&#39;, &#39;87412&#39;), (&#39;message_type&#39;, &#39;result&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_8a00&#39;), (&#39;result&#39;, [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]), (&#39;sender&#39;, &#39;NodeMCU_8a00&#39;)])
-
-
-GPIO status for NodeMCU_8a00: [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]
-
-
-Sending 292 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;read GPIOs&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:02:42.734900&#39;), (&#39;kwargs&#39;, {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}), (&#39;message_id&#39;, &#39;2017-02-07 15:02:42.734900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;NodeMCU_a1a5c000&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Data received: 251 bytes
-GPIO status for NodeMCU_a1a5c000: [[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]
-
-
-Message:
-OrderedDict([(&#39;correlation_id&#39;, &#39;2017-02-07 15:02:42.734900&#39;), (&#39;message_id&#39;, &#39;101118&#39;), (&#39;message_type&#39;, &#39;result&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_a1a5c000&#39;), (&#39;result&#39;, [[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]), (&#39;sender&#39;, &#39;NodeMCU_a1a5c000&#39;)])
-
-
-Sending 292 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;read GPIOs&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:02:43.664900&#39;), (&#39;kwargs&#39;, {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}), (&#39;message_id&#39;, &#39;2017-02-07 15:02:43.664900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;NodeMCU_d1e0a200&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Data received: 250 bytes
-
-GPIO status for NodeMCU_d1e0a200: [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]
-Message:
-OrderedDict([(&#39;correlation_id&#39;, &#39;2017-02-07 15:02:43.664900&#39;), (&#39;message_id&#39;, &#39;89198&#39;), (&#39;message_type&#39;, &#39;result&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_d1e0a200&#39;), (&#39;result&#39;, [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]), (&#39;sender&#39;, &#39;NodeMCU_d1e0a200&#39;)])
-
-
-
-Sending 290 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;read GPIOs&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:02:44.696900&#39;), (&#39;kwargs&#39;, {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}), (&#39;message_id&#39;, &#39;2017-02-07 15:02:44.696900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;NodeMCU_edca00&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Data received: 246 bytes
-Message:
-OrderedDict([(&#39;correlation_id&#39;, &#39;2017-02-07 15:02:44.696900&#39;), (&#39;message_id&#39;, &#39;60224&#39;), (&#39;message_type&#39;, &#39;result&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_edca00&#39;), (&#39;result&#39;, [[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]), (&#39;sender&#39;, &#39;NodeMCU_edca00&#39;)])
-
-
-GPIO status for NodeMCU_edca00: [[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]
-
-
-Sending 292 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;read GPIOs&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:02:45.704900&#39;), (&#39;kwargs&#39;, {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}), (&#39;message_id&#39;, &#39;2017-02-07 15:02:45.704900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;NodeMCU_f1d30800&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Data received: 251 bytes
-Message:
-OrderedDict([(&#39;correlation_id&#39;, &#39;2017-02-07 15:02:45.704900&#39;), (&#39;message_id&#39;, &#39;104128&#39;), (&#39;message_type&#39;, &#39;result&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_f1d30800&#39;), (&#39;result&#39;, [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]), (&#39;sender&#39;, &#39;NodeMCU_f1d30800&#39;)])
-
-
-GPIO status for NodeMCU_f1d30800: [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]
-
-</pre>
+<pre>Sending 286 bytes<br>Message:<br>OrderedDict([('command', 'read GPIOs'), ('correlation_id', '2017-02-07 15:02:38.741900'), ('kwargs', {'pins': [5, 12, 13, 14, 15, 16]}), ('message_id', '2017-02-07 15:02:38.741900'), ('message_type', 'command'), ('need_result', True), ('receiver', 'Client_366'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Data received: 286 bytes<br>Message:<br>OrderedDict([('command', 'read GPIOs'), ('correlation_id', '2017-02-07 15:02:38.741900'), ('kwargs', {'pins': [5, 12, 13, 14, 15, 16]}), ('message_id', '2017-02-07 15:02:38.741900'), ('message_type', 'command'), ('need_result', True), ('receiver', 'Client_366'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Processed result:<br>OrderedDict([('correlation_id', '2017-02-07 15:02:38.741900'), ('message_id', '2017-02-07 15:02:39.678900'), ('message_type', 'result'), ('receiver', 'Client_366'), ('reply_to', 'Client_366'), ('result', 'Not applicable.'), ('sender', 'Client_366')])<br><br><br>Sending 223 bytes<br>Message:<br>OrderedDict([('correlation_id', '2017-02-07 15:02:38.741900'), ('message_id', '2017-02-07 15:02:39.678900'), ('message_type', 'result'), ('receiver', 'Client_366'), ('reply_to', 'Client_366'), ('result', 'Not applicable.'), ('sender', 'Client_366')])<br><br><br>Data received: 223 bytes<br>Message:<br>OrderedDict([('correlation_id', '2017-02-07 15:02:38.741900'), ('message_id', '2017-02-07 15:02:39.678900'), ('message_type', 'result'), ('receiver', 'Client_366'), ('reply_to', 'Client_366'), ('result', 'Not applicable.'), ('sender', 'Client_366')])<br><br><br><span style="color: red;">GPIO status for Client_366: Not applicable.</span><br><br><br>Sending 291 bytes<br>Message:<br>OrderedDict([('command', 'read GPIOs'), ('correlation_id', '2017-02-07 15:02:40.711900'), ('kwargs', {'pins': [5, 12, 13, 14, 15, 16]}), ('message_id', '2017-02-07 15:02:40.711900'), ('message_type', 'command'), ('need_result', True), ('receiver', 'NodeMCU_1dsc000'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Data received: 248 bytes<br>Message:<br>OrderedDict([('correlation_id', '2017-02-07 15:02:40.711900'), ('message_id', '99527'), ('message_type', 'result'), ('receiver', 'Client_366'), ('reply_to', 'NodeMCU_1dsc000'), ('result', [[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]), ('sender', 'NodeMCU_1dsc000')])<br><br style="color: red;"><span style="color: red;">GPIO status for NodeMCU_1dsc000: [[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]</span><br><br><br>Sending 288 bytes<br><br>Message:<br>OrderedDict([('command', 'read GPIOs'), ('correlation_id', '2017-02-07 15:02:41.966900'), ('kwargs', {'pins': [5, 12, 13, 14, 15, 16]}), ('message_id', '2017-02-07 15:02:41.966900'), ('message_type', 'command'), ('need_result', True), ('receiver', 'NodeMCU_8a00'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Data received: 242 bytes<br>Message:<br>OrderedDict([('correlation_id', '2017-02-07 15:02:41.966900'), ('message_id', '87412'), ('message_type', 'result'), ('receiver', 'Client_366'), ('reply_to', 'NodeMCU_8a00'), ('result', [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]), ('sender', 'NodeMCU_8a00')])<br><br><br style="color: red;"><span style="color: red;">GPIO status for NodeMCU_8a00: [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]</span><br><br><br>Sending 292 bytes<br>Message:<br>OrderedDict([('command', 'read GPIOs'), ('correlation_id', '2017-02-07 15:02:42.734900'), ('kwargs', {'pins': [5, 12, 13, 14, 15, 16]}), ('message_id', '2017-02-07 15:02:42.734900'), ('message_type', 'command'), ('need_result', True), ('receiver', 'NodeMCU_a1a5c000'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Data received: 251 bytes<br><span style="color: red;">GPIO status for NodeMCU_a1a5c000: [[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]</span><br><br><br>Message:<br>OrderedDict([('correlation_id', '2017-02-07 15:02:42.734900'), ('message_id', '101118'), ('message_type', 'result'), ('receiver', 'Client_366'), ('reply_to', 'NodeMCU_a1a5c000'), ('result', [[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]), ('sender', 'NodeMCU_a1a5c000')])<br><br><br>Sending 292 bytes<br>Message:<br>OrderedDict([('command', 'read GPIOs'), ('correlation_id', '2017-02-07 15:02:43.664900'), ('kwargs', {'pins': [5, 12, 13, 14, 15, 16]}), ('message_id', '2017-02-07 15:02:43.664900'), ('message_type', 'command'), ('need_result', True), ('receiver', 'NodeMCU_d1e0a200'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Data received: 250 bytes<br><br><span style="color: red;">GPIO status for NodeMCU_d1e0a200: [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]</span><br>Message:<br>OrderedDict([('correlation_id', '2017-02-07 15:02:43.664900'), ('message_id', '89198'), ('message_type', 'result'), ('receiver', 'Client_366'), ('reply_to', 'NodeMCU_d1e0a200'), ('result', [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]), ('sender', 'NodeMCU_d1e0a200')])<br><br><br><br>Sending 290 bytes<br>Message:<br>OrderedDict([('command', 'read GPIOs'), ('correlation_id', '2017-02-07 15:02:44.696900'), ('kwargs', {'pins': [5, 12, 13, 14, 15, 16]}), ('message_id', '2017-02-07 15:02:44.696900'), ('message_type', 'command'), ('need_result', True), ('receiver', 'NodeMCU_edca00'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Data received: 246 bytes<br>Message:<br>OrderedDict([('correlation_id', '2017-02-07 15:02:44.696900'), ('message_id', '60224'), ('message_type', 'result'), ('receiver', 'Client_366'), ('reply_to', 'NodeMCU_edca00'), ('result', [[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]), ('sender', 'NodeMCU_edca00')])<br><br><br style="color: red;"><span style="color: red;">GPIO status for NodeMCU_edca00: [[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]</span><br style="color: red;"><br><br>Sending 292 bytes<br>Message:<br>OrderedDict([('command', 'read GPIOs'), ('correlation_id', '2017-02-07 15:02:45.704900'), ('kwargs', {'pins': [5, 12, 13, 14, 15, 16]}), ('message_id', '2017-02-07 15:02:45.704900'), ('message_type', 'command'), ('need_result', True), ('receiver', 'NodeMCU_f1d30800'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Data received: 251 bytes<br>Message:<br>OrderedDict([('correlation_id', '2017-02-07 15:02:45.704900'), ('message_id', '104128'), ('message_type', 'result'), ('receiver', 'Client_366'), ('reply_to', 'NodeMCU_f1d30800'), ('result', [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]), ('sender', 'NodeMCU_f1d30800')])<br><br><br style="color: red;"><span style="color: red;">GPIO status for NodeMCU_f1d30800: [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]</span><br style="color: red;"><br></pre>
 </div>
 </div>
 
@@ -12196,7 +12024,7 @@ GPIO status for NodeMCU_f1d30800: [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Blink-each-node">Blink each node<a class="anchor-link" href="#Blink-each-node">&#182;</a></h3><p><a href="https://youtu.be/I_s-no_0L24">YouTube video clip</a></p>
+<h3 id="Blink-each-node">Blink each node<a class="anchor-link" href="#Blink-each-node">¶</a></h3><p><a href="https://youtu.be/I_s-no_0L24">YouTube video clip</a></p>
 
 </div>
 </div>
@@ -12206,9 +12034,8 @@ GPIO status for NodeMCU_f1d30800: [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">remote_node</span> <span class="ow">in</span> <span class="n">remote_nodes</span><span class="p">:</span>
-    <span class="n">the_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">remote_node</span><span class="p">,</span> <span class="n">messages</span><span class="p">[</span><span class="s1">&#39;blink_led&#39;</span><span class="p">])</span> 
-</pre></div>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">remote_node</span> <span class="ow">in</span> <span class="n">remote_nodes</span><span class="p">:</span>
+    <span class="n">the_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">remote_node</span><span class="p">,</span> <span class="n">messages</span><span class="p">[</span><span class="s1">'blink_led'</span><span class="p">])</span> <br></pre></div>
 
 </div>
 </div>
@@ -12222,67 +12049,7 @@ GPIO status for NodeMCU_f1d30800: [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>
-Sending 300 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;blink led&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 14:56:44.975900&#39;), (&#39;kwargs&#39;, {&#39;on_seconds&#39;: 0.1, &#39;off_seconds&#39;: 0.1, &#39;forever&#39;: False, &#39;times&#39;: 3}), (&#39;message_id&#39;, &#39;2017-02-07 14:56:44.975900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Sending 304 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;blink led&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 14:56:45.133900&#39;), (&#39;kwargs&#39;, {&#39;on_seconds&#39;: 0.1, &#39;off_seconds&#39;: 0.1, &#39;forever&#39;: False, &#39;times&#39;: 3}), (&#39;message_id&#39;, &#39;2017-02-07 14:56:45.133900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;receiver&#39;, &#39;NodeMCU_edca00&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Data received: 300 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;blink led&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 14:56:44.975900&#39;), (&#39;kwargs&#39;, {&#39;on_seconds&#39;: 0.1, &#39;off_seconds&#39;: 0.1, &#39;forever&#39;: False, &#39;times&#39;: 3}), (&#39;message_id&#39;, &#39;2017-02-07 14:56:44.975900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Data received: 245 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;set connection name&#39;), (&#39;correlation_id&#39;, &#39;7277&#39;), (&#39;kwargs&#39;, {&#39;name&#39;: &#39;NodeMCU_edca00&#39;}), (&#39;message_id&#39;, &#39;7277&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;Hub&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_edca00&#39;), (&#39;sender&#39;, &#39;NodeMCU_edca00&#39;)])
-
-
-Data received: 251 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;set connection name&#39;), (&#39;correlation_id&#39;, &#39;8969&#39;), (&#39;kwargs&#39;, {&#39;name&#39;: &#39;NodeMCU_f1d30800&#39;}), (&#39;message_id&#39;, &#39;8969&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;Hub&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_f1d30800&#39;), (&#39;sender&#39;, &#39;NodeMCU_f1d30800&#39;)])
-
-
-Data received: 250 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;set connection name&#39;), (&#39;correlation_id&#39;, &#39;11244&#39;), (&#39;kwargs&#39;, {&#39;name&#39;: &#39;NodeMCU_1dsc000&#39;}), (&#39;message_id&#39;, &#39;11244&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;Hub&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_1dsc000&#39;), (&#39;sender&#39;, &#39;NodeMCU_1dsc000&#39;)])
-
-
-Data received: 251 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;set connection name&#39;), (&#39;correlation_id&#39;, &#39;6970&#39;), (&#39;kwargs&#39;, {&#39;name&#39;: &#39;NodeMCU_f1d30800&#39;}), (&#39;message_id&#39;, &#39;6970&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;Hub&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_f1d30800&#39;), (&#39;sender&#39;, &#39;NodeMCU_f1d30800&#39;)])
-
-
-Data received: 248 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;set connection name&#39;), (&#39;correlation_id&#39;, &#39;8981&#39;), (&#39;kwargs&#39;, {&#39;name&#39;: &#39;NodeMCU_1dsc000&#39;}), (&#39;message_id&#39;, &#39;8981&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;Hub&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_1dsc000&#39;), (&#39;sender&#39;, &#39;NodeMCU_1dsc000&#39;)])
-
-
-Data received: 245 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;set connection name&#39;), (&#39;correlation_id&#39;, &#39;9251&#39;), (&#39;kwargs&#39;, {&#39;name&#39;: &#39;NodeMCU_edca00&#39;}), (&#39;message_id&#39;, &#39;9251&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;Hub&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_edca00&#39;), (&#39;sender&#39;, &#39;NodeMCU_edca00&#39;)])
-
-
-Data received: 251 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;set connection name&#39;), (&#39;correlation_id&#39;, &#39;9503&#39;), (&#39;kwargs&#39;, {&#39;name&#39;: &#39;NodeMCU_a1a5c000&#39;}), (&#39;message_id&#39;, &#39;9503&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;Hub&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_a1a5c000&#39;), (&#39;sender&#39;, &#39;NodeMCU_a1a5c000&#39;)])
-
-
-Data received: 241 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;set connection name&#39;), (&#39;correlation_id&#39;, &#39;19274&#39;), (&#39;kwargs&#39;, {&#39;name&#39;: &#39;NodeMCU_8a00&#39;}), (&#39;message_id&#39;, &#39;19274&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;Hub&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_8a00&#39;), (&#39;sender&#39;, &#39;NodeMCU_8a00&#39;)])
-
-
-Data received: 253 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;set connection name&#39;), (&#39;correlation_id&#39;, &#39;20240&#39;), (&#39;kwargs&#39;, {&#39;name&#39;: &#39;NodeMCU_d1e0a200&#39;}), (&#39;message_id&#39;, &#39;20240&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;Hub&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_d1e0a200&#39;), (&#39;sender&#39;, &#39;NodeMCU_d1e0a200&#39;)])
-
-</pre>
+<pre>Sending 300 bytes<br>Message:<br>OrderedDict([('command', 'blink led'), ('correlation_id', '2017-02-07 14:56:44.975900'), ('kwargs', {'on_seconds': 0.1, 'off_seconds': 0.1, 'forever': False, 'times': 3}), ('message_id', '2017-02-07 14:56:44.975900'), ('message_type', 'command'), ('receiver', 'Client_366'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Sending 304 bytes<br>Message:<br>OrderedDict([('command', 'blink led'), ('correlation_id', '2017-02-07 14:56:45.133900'), ('kwargs', {'on_seconds': 0.1, 'off_seconds': 0.1, 'forever': False, 'times': 3}), ('message_id', '2017-02-07 14:56:45.133900'), ('message_type', 'command'), ('receiver', 'NodeMCU_edca00'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Data received: 300 bytes<br>Message:<br>OrderedDict([('command', 'blink led'), ('correlation_id', '2017-02-07 14:56:44.975900'), ('kwargs', {'on_seconds': 0.1, 'off_seconds': 0.1, 'forever': False, 'times': 3}), ('message_id', '2017-02-07 14:56:44.975900'), ('message_type', 'command'), ('receiver', 'Client_366'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Data received: 245 bytes<br>Message:<br>OrderedDict([('command', 'set connection name'), ('correlation_id', '7277'), ('kwargs', {'name': 'NodeMCU_edca00'}), ('message_id', '7277'), ('message_type', 'command'), ('need_result', True), ('receiver', 'Hub'), ('reply_to', 'NodeMCU_edca00'), ('sender', 'NodeMCU_edca00')])<br><br><br>Data received: 251 bytes<br>Message:<br>OrderedDict([('command', 'set connection name'), ('correlation_id', '8969'), ('kwargs', {'name': 'NodeMCU_f1d30800'}), ('message_id', '8969'), ('message_type', 'command'), ('need_result', True), ('receiver', 'Hub'), ('reply_to', 'NodeMCU_f1d30800'), ('sender', 'NodeMCU_f1d30800')])<br><br><br>Data received: 250 bytes<br>Message:<br>OrderedDict([('command', 'set connection name'), ('correlation_id', '11244'), ('kwargs', {'name': 'NodeMCU_1dsc000'}), ('message_id', '11244'), ('message_type', 'command'), ('need_result', True), ('receiver', 'Hub'), ('reply_to', 'NodeMCU_1dsc000'), ('sender', 'NodeMCU_1dsc000')])<br><br><br>Data received: 251 bytes<br>Message:<br>OrderedDict([('command', 'set connection name'), ('correlation_id', '6970'), ('kwargs', {'name': 'NodeMCU_f1d30800'}), ('message_id', '6970'), ('message_type', 'command'), ('need_result', True), ('receiver', 'Hub'), ('reply_to', 'NodeMCU_f1d30800'), ('sender', 'NodeMCU_f1d30800')])<br><br><br>Data received: 248 bytes<br>Message:<br>OrderedDict([('command', 'set connection name'), ('correlation_id', '8981'), ('kwargs', {'name': 'NodeMCU_1dsc000'}), ('message_id', '8981'), ('message_type', 'command'), ('need_result', True), ('receiver', 'Hub'), ('reply_to', 'NodeMCU_1dsc000'), ('sender', 'NodeMCU_1dsc000')])<br><br><br>Data received: 245 bytes<br>Message:<br>OrderedDict([('command', 'set connection name'), ('correlation_id', '9251'), ('kwargs', {'name': 'NodeMCU_edca00'}), ('message_id', '9251'), ('message_type', 'command'), ('need_result', True), ('receiver', 'Hub'), ('reply_to', 'NodeMCU_edca00'), ('sender', 'NodeMCU_edca00')])<br><br><br>Data received: 251 bytes<br>Message:<br>OrderedDict([('command', 'set connection name'), ('correlation_id', '9503'), ('kwargs', {'name': 'NodeMCU_a1a5c000'}), ('message_id', '9503'), ('message_type', 'command'), ('need_result', True), ('receiver', 'Hub'), ('reply_to', 'NodeMCU_a1a5c000'), ('sender', 'NodeMCU_a1a5c000')])<br><br><br>Data received: 241 bytes<br>Message:<br>OrderedDict([('command', 'set connection name'), ('correlation_id', '19274'), ('kwargs', {'name': 'NodeMCU_8a00'}), ('message_id', '19274'), ('message_type', 'command'), ('need_result', True), ('receiver', 'Hub'), ('reply_to', 'NodeMCU_8a00'), ('sender', 'NodeMCU_8a00')])<br><br><br>Data received: 253 bytes<br>Message:<br>OrderedDict([('command', 'set connection name'), ('correlation_id', '20240'), ('kwargs', {'name': 'NodeMCU_d1e0a200'}), ('message_id', '20240'), ('message_type', 'command'), ('need_result', True), ('receiver', 'Hub'), ('reply_to', 'NodeMCU_d1e0a200'), ('sender', 'NodeMCU_d1e0a200')])<br><br></pre>
 </div>
 </div>
 
@@ -12295,7 +12062,7 @@ OrderedDict([(&#39;command&#39;, &#39;set connection name&#39;), (&#39;correlati
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Send-out-messages-and-get-asynchonous-results">Send out messages and get asynchonous results<a class="anchor-link" href="#Send-out-messages-and-get-asynchonous-results">&#182;</a></h3>
+<h3 id="Send-out-messages-and-get-asynchonous-results">Send out messages and get asynchonous results<a class="anchor-link" href="#Send-out-messages-and-get-asynchonous-results">¶</a></h3>
 </div>
 </div>
 </div>
@@ -12304,7 +12071,7 @@ OrderedDict([(&#39;command&#39;, &#39;set connection name&#39;), (&#39;correlati
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">[______________ Sending messages ______________]</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">[______________ Sending messages ______________]</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
 
 <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -12329,100 +12096,7 @@ OrderedDict([(&#39;command&#39;, &#39;set connection name&#39;), (&#39;correlati
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>
-[______________ Sending messages ______________]
-
-
-Sending 291 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;read GPIOs&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:03:08.566900&#39;), (&#39;kwargs&#39;, {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}), (&#39;message_id&#39;, &#39;2017-02-07 15:03:08.566900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;NodeMCU_1dsc000&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Sending 288 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;read GPIOs&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:03:08.890900&#39;), (&#39;kwargs&#39;, {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}), (&#39;message_id&#39;, &#39;2017-02-07 15:03:08.890900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;NodeMCU_8a00&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Data received: 249 bytes
-Message:
-OrderedDict([(&#39;correlation_id&#39;, &#39;2017-02-07 15:03:08.566900&#39;), (&#39;message_id&#39;, &#39;126958&#39;), (&#39;message_type&#39;, &#39;result&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_1dsc000&#39;), (&#39;result&#39;, [[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]), (&#39;sender&#39;, &#39;NodeMCU_1dsc000&#39;)])
-
-
-Sending 292 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;read GPIOs&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:03:09.268900&#39;), (&#39;kwargs&#39;, {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}), (&#39;message_id&#39;, &#39;2017-02-07 15:03:09.268900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;NodeMCU_a1a5c000&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Data received: 243 bytes
-Message:
-OrderedDict([(&#39;correlation_id&#39;, &#39;2017-02-07 15:03:08.890900&#39;), (&#39;message_id&#39;, &#39;114344&#39;), (&#39;message_type&#39;, &#39;result&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_8a00&#39;), (&#39;result&#39;, [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]), (&#39;sender&#39;, &#39;NodeMCU_8a00&#39;)])
-
-
-Sending 292 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;read GPIOs&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:03:09.557900&#39;), (&#39;kwargs&#39;, {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}), (&#39;message_id&#39;, &#39;2017-02-07 15:03:09.557900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;NodeMCU_d1e0a200&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Sending 290 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;read GPIOs&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:03:09.799900&#39;), (&#39;kwargs&#39;, {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}), (&#39;message_id&#39;, &#39;2017-02-07 15:03:09.799900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;NodeMCU_edca00&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Data received: 251 bytes
-Message:
-OrderedDict([(&#39;correlation_id&#39;, &#39;2017-02-07 15:03:09.268900&#39;), (&#39;message_id&#39;, &#39;127726&#39;), (&#39;message_type&#39;, &#39;result&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_a1a5c000&#39;), (&#39;result&#39;, [[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]), (&#39;sender&#39;, &#39;NodeMCU_a1a5c000&#39;)])
-
-
-Sending 292 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;read GPIOs&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:03:10.158900&#39;), (&#39;kwargs&#39;, {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}), (&#39;message_id&#39;, &#39;2017-02-07 15:03:10.158900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;need_result&#39;, True), (&#39;receiver&#39;, &#39;NodeMCU_f1d30800&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Data received: 251 bytes
-Message:
-OrderedDict([(&#39;correlation_id&#39;, &#39;2017-02-07 15:03:09.557900&#39;), (&#39;message_id&#39;, &#39;115046&#39;), (&#39;message_type&#39;, &#39;result&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_d1e0a200&#39;), (&#39;result&#39;, [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]), (&#39;sender&#39;, &#39;NodeMCU_d1e0a200&#39;)])
-
-
-Sending 305 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;blink led&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:03:10.424900&#39;), (&#39;kwargs&#39;, {&#39;on_seconds&#39;: 0.1, &#39;off_seconds&#39;: 0.1, &#39;forever&#39;: False, &#39;times&#39;: 3}), (&#39;message_id&#39;, &#39;2017-02-07 15:03:10.424900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;receiver&#39;, &#39;NodeMCU_1dsc000&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Data received: 246 bytes
-Message:
-OrderedDict([(&#39;correlation_id&#39;, &#39;2017-02-07 15:03:09.799900&#39;), (&#39;message_id&#39;, &#39;85339&#39;), (&#39;message_type&#39;, &#39;result&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_edca00&#39;), (&#39;result&#39;, [[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]), (&#39;sender&#39;, &#39;NodeMCU_edca00&#39;)])
-
-
-Sending 302 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;blink led&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:03:10.821900&#39;), (&#39;kwargs&#39;, {&#39;on_seconds&#39;: 0.1, &#39;off_seconds&#39;: 0.1, &#39;forever&#39;: False, &#39;times&#39;: 3}), (&#39;message_id&#39;, &#39;2017-02-07 15:03:10.821900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;receiver&#39;, &#39;NodeMCU_8a00&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Data received: 251 bytes
-Message:
-OrderedDict([(&#39;correlation_id&#39;, &#39;2017-02-07 15:03:10.158900&#39;), (&#39;message_id&#39;, &#39;128531&#39;), (&#39;message_type&#39;, &#39;result&#39;), (&#39;receiver&#39;, &#39;Client_366&#39;), (&#39;reply_to&#39;, &#39;NodeMCU_f1d30800&#39;), (&#39;result&#39;, [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]), (&#39;sender&#39;, &#39;NodeMCU_f1d30800&#39;)])
-
-
-Sending 306 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;blink led&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:03:11.123900&#39;), (&#39;kwargs&#39;, {&#39;on_seconds&#39;: 0.1, &#39;off_seconds&#39;: 0.1, &#39;forever&#39;: False, &#39;times&#39;: 3}), (&#39;message_id&#39;, &#39;2017-02-07 15:03:11.123900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;receiver&#39;, &#39;NodeMCU_a1a5c000&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Sending 306 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;blink led&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:03:11.438900&#39;), (&#39;kwargs&#39;, {&#39;on_seconds&#39;: 0.1, &#39;off_seconds&#39;: 0.1, &#39;forever&#39;: False, &#39;times&#39;: 3}), (&#39;message_id&#39;, &#39;2017-02-07 15:03:11.438900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;receiver&#39;, &#39;NodeMCU_d1e0a200&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Sending 304 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;blink led&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:03:11.762900&#39;), (&#39;kwargs&#39;, {&#39;on_seconds&#39;: 0.1, &#39;off_seconds&#39;: 0.1, &#39;forever&#39;: False, &#39;times&#39;: 3}), (&#39;message_id&#39;, &#39;2017-02-07 15:03:11.762900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;receiver&#39;, &#39;NodeMCU_edca00&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-
-Sending 306 bytes
-Message:
-OrderedDict([(&#39;command&#39;, &#39;blink led&#39;), (&#39;correlation_id&#39;, &#39;2017-02-07 15:03:12.056900&#39;), (&#39;kwargs&#39;, {&#39;on_seconds&#39;: 0.1, &#39;off_seconds&#39;: 0.1, &#39;forever&#39;: False, &#39;times&#39;: 3}), (&#39;message_id&#39;, &#39;2017-02-07 15:03:12.056900&#39;), (&#39;message_type&#39;, &#39;command&#39;), (&#39;receiver&#39;, &#39;NodeMCU_f1d30800&#39;), (&#39;reply_to&#39;, &#39;Client_366&#39;), (&#39;sender&#39;, &#39;Client_366&#39;)])
-
-</pre>
+<pre>[______________ Sending messages ______________]<br><br><br>Sending 291 bytes<br>Message:<br>OrderedDict([('command', 'read GPIOs'), ('correlation_id', '2017-02-07 15:03:08.566900'), ('kwargs', {'pins': [5, 12, 13, 14, 15, 16]}), ('message_id', '2017-02-07 15:03:08.566900'), ('message_type', 'command'), ('need_result', True), ('receiver', 'NodeMCU_1dsc000'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Sending 288 bytes<br>Message:<br>OrderedDict([('command', 'read GPIOs'), ('correlation_id', '2017-02-07 15:03:08.890900'), ('kwargs', {'pins': [5, 12, 13, 14, 15, 16]}), ('message_id', '2017-02-07 15:03:08.890900'), ('message_type', 'command'), ('need_result', True), ('receiver', 'NodeMCU_8a00'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Data received: 249 bytes<br>Message:<br>OrderedDict([('correlation_id', '2017-02-07 15:03:08.566900'), ('message_id', '126958'), ('message_type', 'result'), ('receiver', 'Client_366'), ('reply_to', 'NodeMCU_1dsc000'), ('result', [[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]), ('sender', 'NodeMCU_1dsc000')])<br><br><br>Sending 292 bytes<br>Message:<br>OrderedDict([('command', 'read GPIOs'), ('correlation_id', '2017-02-07 15:03:09.268900'), ('kwargs', {'pins': [5, 12, 13, 14, 15, 16]}), ('message_id', '2017-02-07 15:03:09.268900'), ('message_type', 'command'), ('need_result', True), ('receiver', 'NodeMCU_a1a5c000'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Data received: 243 bytes<br>Message:<br>OrderedDict([('correlation_id', '2017-02-07 15:03:08.890900'), ('message_id', '114344'), ('message_type', 'result'), ('receiver', 'Client_366'), ('reply_to', 'NodeMCU_8a00'), ('result', [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]), ('sender', 'NodeMCU_8a00')])<br><br><br>Sending 292 bytes<br>Message:<br>OrderedDict([('command', 'read GPIOs'), ('correlation_id', '2017-02-07 15:03:09.557900'), ('kwargs', {'pins': [5, 12, 13, 14, 15, 16]}), ('message_id', '2017-02-07 15:03:09.557900'), ('message_type', 'command'), ('need_result', True), ('receiver', 'NodeMCU_d1e0a200'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Sending 290 bytes<br>Message:<br>OrderedDict([('command', 'read GPIOs'), ('correlation_id', '2017-02-07 15:03:09.799900'), ('kwargs', {'pins': [5, 12, 13, 14, 15, 16]}), ('message_id', '2017-02-07 15:03:09.799900'), ('message_type', 'command'), ('need_result', True), ('receiver', 'NodeMCU_edca00'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Data received: 251 bytes<br>Message:<br>OrderedDict([('correlation_id', '2017-02-07 15:03:09.268900'), ('message_id', '127726'), ('message_type', 'result'), ('receiver', 'Client_366'), ('reply_to', 'NodeMCU_a1a5c000'), ('result', [[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]), ('sender', 'NodeMCU_a1a5c000')])<br><br><br>Sending 292 bytes<br>Message:<br>OrderedDict([('command', 'read GPIOs'), ('correlation_id', '2017-02-07 15:03:10.158900'), ('kwargs', {'pins': [5, 12, 13, 14, 15, 16]}), ('message_id', '2017-02-07 15:03:10.158900'), ('message_type', 'command'), ('need_result', True), ('receiver', 'NodeMCU_f1d30800'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Data received: 251 bytes<br>Message:<br>OrderedDict([('correlation_id', '2017-02-07 15:03:09.557900'), ('message_id', '115046'), ('message_type', 'result'), ('receiver', 'Client_366'), ('reply_to', 'NodeMCU_d1e0a200'), ('result', [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]), ('sender', 'NodeMCU_d1e0a200')])<br><br><br>Sending 305 bytes<br>Message:<br>OrderedDict([('command', 'blink led'), ('correlation_id', '2017-02-07 15:03:10.424900'), ('kwargs', {'on_seconds': 0.1, 'off_seconds': 0.1, 'forever': False, 'times': 3}), ('message_id', '2017-02-07 15:03:10.424900'), ('message_type', 'command'), ('receiver', 'NodeMCU_1dsc000'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Data received: 246 bytes<br>Message:<br>OrderedDict([('correlation_id', '2017-02-07 15:03:09.799900'), ('message_id', '85339'), ('message_type', 'result'), ('receiver', 'Client_366'), ('reply_to', 'NodeMCU_edca00'), ('result', [[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]), ('sender', 'NodeMCU_edca00')])<br><br><br>Sending 302 bytes<br>Message:<br>OrderedDict([('command', 'blink led'), ('correlation_id', '2017-02-07 15:03:10.821900'), ('kwargs', {'on_seconds': 0.1, 'off_seconds': 0.1, 'forever': False, 'times': 3}), ('message_id', '2017-02-07 15:03:10.821900'), ('message_type', 'command'), ('receiver', 'NodeMCU_8a00'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Data received: 251 bytes<br>Message:<br>OrderedDict([('correlation_id', '2017-02-07 15:03:10.158900'), ('message_id', '128531'), ('message_type', 'result'), ('receiver', 'Client_366'), ('reply_to', 'NodeMCU_f1d30800'), ('result', [[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]), ('sender', 'NodeMCU_f1d30800')])<br><br><br>Sending 306 bytes<br>Message:<br>OrderedDict([('command', 'blink led'), ('correlation_id', '2017-02-07 15:03:11.123900'), ('kwargs', {'on_seconds': 0.1, 'off_seconds': 0.1, 'forever': False, 'times': 3}), ('message_id', '2017-02-07 15:03:11.123900'), ('message_type', 'command'), ('receiver', 'NodeMCU_a1a5c000'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Sending 306 bytes<br>Message:<br>OrderedDict([('command', 'blink led'), ('correlation_id', '2017-02-07 15:03:11.438900'), ('kwargs', {'on_seconds': 0.1, 'off_seconds': 0.1, 'forever': False, 'times': 3}), ('message_id', '2017-02-07 15:03:11.438900'), ('message_type', 'command'), ('receiver', 'NodeMCU_d1e0a200'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Sending 304 bytes<br>Message:<br>OrderedDict([('command', 'blink led'), ('correlation_id', '2017-02-07 15:03:11.762900'), ('kwargs', {'on_seconds': 0.1, 'off_seconds': 0.1, 'forever': False, 'times': 3}), ('message_id', '2017-02-07 15:03:11.762900'), ('message_type', 'command'), ('receiver', 'NodeMCU_edca00'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br><br>Sending 306 bytes<br>Message:<br>OrderedDict([('command', 'blink led'), ('correlation_id', '2017-02-07 15:03:12.056900'), ('kwargs', {'on_seconds': 0.1, 'off_seconds': 0.1, 'forever': False, 'times': 3}), ('message_id', '2017-02-07 15:03:12.056900'), ('message_type', 'command'), ('receiver', 'NodeMCU_f1d30800'), ('reply_to', 'Client_366'), ('sender', 'Client_366')])<br><br></pre>
 </div>
 </div>
 
@@ -12435,7 +12109,7 @@ OrderedDict([(&#39;command&#39;, &#39;blink led&#39;), (&#39;correlation_id&#39;
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Actually-get-the-results">Actually get the results<a class="anchor-link" href="#Actually-get-the-results">&#182;</a></h3>
+<h3 id="Actually-get-the-results">Actually get the results<a class="anchor-link" href="#Actually-get-the-results">¶</a></h3>
 </div>
 </div>
 </div>
@@ -12444,19 +12118,18 @@ OrderedDict([(&#39;command&#39;, &#39;blink led&#39;), (&#39;correlation_id&#39;
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># collect and print results        </span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">[_________ Wait few seconds for reply _________]</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># collect and print results        </span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">[_________ Wait few seconds for reply _________]</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
 <span class="k">for</span> <span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;need_result&#39;</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">[Result for request]:</span><span class="se">\n</span><span class="s1">___Request___:</span><span class="se">\n</span><span class="si">{0}</span><span class="se">\n</span><span class="s1">___Result____:</span><span class="se">\n</span><span class="si">{1}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">message</span><span class="p">,</span>
+        <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'need_result'</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">[Result for request]:</span><span class="se">\n</span><span class="s1">___Request___:</span><span class="se">\n</span><span class="si">{0}</span><span class="se">\n</span><span class="s1">___Result____:</span><span class="se">\n</span><span class="si">{1}</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">message</span><span class="p">,</span>
                                                                                                <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="k">if</span> <span class="n">result</span> <span class="k">else</span> <span class="kc">None</span><span class="p">))</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">[</span><span class="si">{}</span><span class="s1">]</span><span class="se">\n</span><span class="s1">Message:</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">[</span><span class="si">{}</span><span class="s1">]</span><span class="se">\n</span><span class="s1">Message:</span><span class="se">\n</span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
         
 <span class="c1"># Wait a while</span>
-<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>        
-</pre></div>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>        <br></pre></div>
 
 </div>
 </div>
@@ -12470,52 +12143,7 @@ OrderedDict([(&#39;command&#39;, &#39;blink led&#39;), (&#39;correlation_id&#39;
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>
-[_________ Wait few seconds for reply _________]
-
-
-[Result for request]:
-___Request___:
-{&#39;message_id&#39;: &#39;2017-02-07 15:03:08.566900&#39;, &#39;need_result&#39;: True, &#39;command&#39;: &#39;read GPIOs&#39;, &#39;kwargs&#39;: {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}, &#39;receiver&#39;: &#39;NodeMCU_1dsc000&#39;, &#39;message_type&#39;: &#39;command&#39;, &#39;reply_to&#39;: &#39;Client_366&#39;, &#39;correlation_id&#39;: &#39;2017-02-07 15:03:08.566900&#39;, &#39;sender&#39;: &#39;Client_366&#39;}
-___Result____:
-[[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]
-
-
-[Result for request]:
-___Request___:
-{&#39;message_id&#39;: &#39;2017-02-07 15:03:08.890900&#39;, &#39;need_result&#39;: True, &#39;command&#39;: &#39;read GPIOs&#39;, &#39;kwargs&#39;: {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}, &#39;receiver&#39;: &#39;NodeMCU_8a00&#39;, &#39;message_type&#39;: &#39;command&#39;, &#39;reply_to&#39;: &#39;Client_366&#39;, &#39;correlation_id&#39;: &#39;2017-02-07 15:03:08.890900&#39;, &#39;sender&#39;: &#39;Client_366&#39;}
-___Result____:
-[[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]
-
-
-[Result for request]:
-___Request___:
-{&#39;message_id&#39;: &#39;2017-02-07 15:03:09.268900&#39;, &#39;need_result&#39;: True, &#39;command&#39;: &#39;read GPIOs&#39;, &#39;kwargs&#39;: {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}, &#39;receiver&#39;: &#39;NodeMCU_a1a5c000&#39;, &#39;message_type&#39;: &#39;command&#39;, &#39;reply_to&#39;: &#39;Client_366&#39;, &#39;correlation_id&#39;: &#39;2017-02-07 15:03:09.268900&#39;, &#39;sender&#39;: &#39;Client_366&#39;}
-___Result____:
-[[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]
-
-
-[Result for request]:
-___Request___:
-{&#39;message_id&#39;: &#39;2017-02-07 15:03:09.557900&#39;, &#39;need_result&#39;: True, &#39;command&#39;: &#39;read GPIOs&#39;, &#39;kwargs&#39;: {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}, &#39;receiver&#39;: &#39;NodeMCU_d1e0a200&#39;, &#39;message_type&#39;: &#39;command&#39;, &#39;reply_to&#39;: &#39;Client_366&#39;, &#39;correlation_id&#39;: &#39;2017-02-07 15:03:09.557900&#39;, &#39;sender&#39;: &#39;Client_366&#39;}
-___Result____:
-[[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]
-
-
-[Result for request]:
-___Request___:
-{&#39;message_id&#39;: &#39;2017-02-07 15:03:09.799900&#39;, &#39;need_result&#39;: True, &#39;command&#39;: &#39;read GPIOs&#39;, &#39;kwargs&#39;: {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}, &#39;receiver&#39;: &#39;NodeMCU_edca00&#39;, &#39;message_type&#39;: &#39;command&#39;, &#39;reply_to&#39;: &#39;Client_366&#39;, &#39;correlation_id&#39;: &#39;2017-02-07 15:03:09.799900&#39;, &#39;sender&#39;: &#39;Client_366&#39;}
-___Result____:
-[[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]
-
-
-[Result for request]:
-___Request___:
-{&#39;message_id&#39;: &#39;2017-02-07 15:03:10.158900&#39;, &#39;need_result&#39;: True, &#39;command&#39;: &#39;read GPIOs&#39;, &#39;kwargs&#39;: {&#39;pins&#39;: [5, 12, 13, 14, 15, 16]}, &#39;receiver&#39;: &#39;NodeMCU_f1d30800&#39;, &#39;message_type&#39;: &#39;command&#39;, &#39;reply_to&#39;: &#39;Client_366&#39;, &#39;correlation_id&#39;: &#39;2017-02-07 15:03:10.158900&#39;, &#39;sender&#39;: &#39;Client_366&#39;}
-___Result____:
-[[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]
-
-</pre>
+<pre>[_________ Wait few seconds for reply _________]<br><br><br>[Result for request]:<br>___Request___:<br>{'message_id': '2017-02-07 15:03:08.566900', 'need_result': True, 'command': 'read GPIOs', 'kwargs': {'pins': [5, 12, 13, 14, 15, 16]}, 'receiver': 'NodeMCU_1dsc000', 'message_type': 'command', 'reply_to': 'Client_366', 'correlation_id': '2017-02-07 15:03:08.566900', 'sender': 'Client_366'}<br><span style="color: red;">___Result____:</span><br style="color: red;"><span style="color: red;">[[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]</span><br><br><br>[Result for request]:<br>___Request___:<br>{'message_id': '2017-02-07 15:03:08.890900', 'need_result': True, 'command': 'read GPIOs', 'kwargs': {'pins': [5, 12, 13, 14, 15, 16]}, 'receiver': 'NodeMCU_8a00', 'message_type': 'command', 'reply_to': 'Client_366', 'correlation_id': '2017-02-07 15:03:08.890900', 'sender': 'Client_366'}<br><span style="color: red;">___Result____:</span><br style="color: red;"><span style="color: red;">[[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]</span><br><br><br>[Result for request]:<br>___Request___:<br>{'message_id': '2017-02-07 15:03:09.268900', 'need_result': True, 'command': 'read GPIOs', 'kwargs': {'pins': [5, 12, 13, 14, 15, 16]}, 'receiver': 'NodeMCU_a1a5c000', 'message_type': 'command', 'reply_to': 'Client_366', 'correlation_id': '2017-02-07 15:03:09.268900', 'sender': 'Client_366'}<br><span style="color: red;">___Result____:</span><br style="color: red;"><span style="color: red;">[[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]</span><br><br><br>[Result for request]:<br>___Request___:<br>{'message_id': '2017-02-07 15:03:09.557900', 'need_result': True, 'command': 'read GPIOs', 'kwargs': {'pins': [5, 12, 13, 14, 15, 16]}, 'receiver': 'NodeMCU_d1e0a200', 'message_type': 'command', 'reply_to': 'Client_366', 'correlation_id': '2017-02-07 15:03:09.557900', 'sender': 'Client_366'}<br><span style="color: red;">___Result____:</span><br style="color: red;"><span style="color: red;">[[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]</span><br><br><br>[Result for request]:<br>___Request___:<br>{'message_id': '2017-02-07 15:03:09.799900', 'need_result': True, 'command': 'read GPIOs', 'kwargs': {'pins': [5, 12, 13, 14, 15, 16]}, 'receiver': 'NodeMCU_edca00', 'message_type': 'command', 'reply_to': 'Client_366', 'correlation_id': '2017-02-07 15:03:09.799900', 'sender': 'Client_366'}<br><span style="color: red;">___Result____:</span><br style="color: red;"><span style="color: red;">[[5, 0], [12, 1], [13, 1], [14, 1], [15, 0], [16, 0]]</span><br><br><br>[Result for request]:<br>___Request___:<br>{'message_id': '2017-02-07 15:03:10.158900', 'need_result': True, 'command': 'read GPIOs', 'kwargs': {'pins': [5, 12, 13, 14, 15, 16]}, 'receiver': 'NodeMCU_f1d30800', 'message_type': 'command', 'reply_to': 'Client_366', 'correlation_id': '2017-02-07 15:03:10.158900', 'sender': 'Client_366'}<br><span style="color: red;">___Result____:</span><br style="color: red;"><span style="color: red;">[[5, 1], [12, 1], [13, 1], [14, 1], [15, 0], [16, 1]]</span><br><br></pre>
 </div>
 </div>
 
@@ -12528,7 +12156,7 @@ ___Result____:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Stop-the-demo">Stop the demo<a class="anchor-link" href="#Stop-the-demo">&#182;</a></h3>
+<h3 id="Stop-the-demo">Stop the demo<a class="anchor-link" href="#Stop-the-demo">¶</a></h3>
 </div>
 </div>
 </div>
@@ -12537,10 +12165,10 @@ ___Result____:
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Stopping</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Stopping</span>
 <span class="n">the_client</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 <span class="n">the_client</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">[________________ Demo stopped ________________]</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">[________________ Demo stopped ________________]</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12555,11 +12183,7 @@ ___Result____:
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[Closed: (&#39;192.168.0.114&#39;, 1883)]
-[________________ Demo stopped ________________]
-
-
-</pre>
+<pre><span style="color: red;">[Closed: ('192.168.0.114', 1883)]</span><br>[________________ Demo stopped ________________]<br><br><br></pre>
 </div>
 </div>
 
@@ -12572,8 +12196,7 @@ ___Result____:
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class="highlight hl-ipython3"><pre><span></span> <br></pre></div>
 
 </div>
 </div>
@@ -12582,9 +12205,4 @@ ___Result____:
 </div>
     </div>
   </div>
-</body>
-
- 
-
-
-</html>
+</body></html>
