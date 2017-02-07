@@ -11,11 +11,11 @@ import commander
 
 if config.IS_MICROPYTHON:
     import simple as umqtt  # preload to avoid memory fragment problem.
-    import worker_upython as worker_impl
-    # import worker_neuron as worker_impl
+    # import worker_upython as worker_impl
+    import worker_neuron as worker_impl    
 else:
-    import worker_cpython as worker_impl 
-    
+    import worker_cpython as worker_impl
+
 
 class Node(commander.Commander):
     

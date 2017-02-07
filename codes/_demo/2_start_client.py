@@ -61,14 +61,14 @@ def main():
         # remote_nodes = sorted(list(asynch_result.get().keys()))
 
 
-        # for MQTT broker
-        # the_client.node.worker.roll_call()
-        message = {'receiver': 'Hub',
-                   'message_type': 'function',
-                   'function': 'check_in',
-                   'kwargs': {'caller': the_client.node.worker.name}}
-        the_client.request('Hub', message)
-
+        # for MQTT broker        
+        # message = {'receiver': 'Hub',
+                   # 'message_type': 'function',
+                   # 'function': 'check_in',
+                   # 'kwargs': {'caller': the_client.node.worker.name}}
+        # the_client.request('Hub', message)
+        
+        the_client.node.worker.roll_call()
         time.sleep(2)
         remote_nodes = sorted(the_client.node.worker.contacts_by_name().keys())
 

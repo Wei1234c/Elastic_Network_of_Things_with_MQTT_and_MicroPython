@@ -92,19 +92,15 @@ class Commander:
 
 
     def do_file(self, message):
-        filename = None
+        filename = message.get('kwargs').get('filename')
         if message.get('file'):
-            kwargs = message.get('kwargs')
-            if kwargs:
-                filename = kwargs.get('filename')
-            filename = filename if filename else 'uploaded_file.py'
             with open(filename, 'w') as f:
                 f.write(message.get('file'))
 
         return None, None
 
 
-    def do_script(self, message):
+    def do_script(self, message):        
         if message.get('script'):
             with open('script.py', 'w') as f:
                 f.write(message.get('script'))
