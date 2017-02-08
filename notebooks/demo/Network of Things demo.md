@@ -1,5 +1,5 @@
 
-# Network of Things test
+# Network of Things demo
 
 Start a Mosquitto container first. For example:
 - Use `codes\_demo\1_start_broker.sh` to start a Mosquitto container on Raspberry Pi.
