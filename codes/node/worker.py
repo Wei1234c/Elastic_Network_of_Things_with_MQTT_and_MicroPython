@@ -77,6 +77,7 @@ class Worker(message_client.Message_client,
         if config.IS_MICROPYTHON:
             print('[Memory - free: {}   allocated: {}]'.format(gc.mem_free(), gc.mem_alloc()))
         gc.collect()
+        
         time_stamp = str(self.now())
         
         # outgoing requested messages

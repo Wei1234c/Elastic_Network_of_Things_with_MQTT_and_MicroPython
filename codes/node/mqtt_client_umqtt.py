@@ -18,8 +18,6 @@ class Message_client:
                                             user = config.USERNAME, password = config.PASSWORD,
                                             keepalive=60,
                                             ssl=False, ssl_params={})
-        # self.mqtt_client.timeout = config.CLIENT_RECEIVE_TIME_OUT_SECONDS
-
         self.addr = self.server_address
         self.parent = None
         self.message = None
@@ -104,20 +102,24 @@ class Message_client:
 
             try:
                 self.mqtt_client.sock.settimeout(config.CLIENT_RECEIVE_TIME_OUT_SECONDS)
-                self.mqtt_client.wait_msg()
-                # c = self.mqtt_client.check_msg()
-
-                # self.process_messages()
+                res = self.mqtt_client.wait_msg()
+                
             except Exception as e:
-                # print(e)
-                self.mqtt_client.ping()
-                self.process_messages()
+                # Connection reset.
+                if config.IS_MICROPYTHON:
+                    if str(e) == config.MICROPYTHON_MQTT_CONNECTION_RESET_ERROR_MESSAGE:
+                        raise e                            
+                elif isinstance(e, ConnectionResetError):
+                    raise e
 
+                # Receiving process timeout.
+                self.mqtt_client.ping()
+                self.process_messages()                
+                
 
     def receive_one_cycle(self):
         try:
             self.mqtt_client.check_msg()
-            # self.process_messages()
         except Exception as e:
             pass
 
