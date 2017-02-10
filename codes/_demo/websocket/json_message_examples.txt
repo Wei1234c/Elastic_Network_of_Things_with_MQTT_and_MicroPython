@@ -1,0 +1,114 @@
+[blink_led]
+{
+    "message": {
+        "command": "blink led",
+        "correlation_id": "2017-02-10 23:35:51.894100",
+        "kwargs": {
+            "forever": false,
+            "off_seconds": 0.1,
+            "on_seconds": 0.1,
+            "times": 3
+        },
+        "message_id": "2017-02-10 23:35:51.894100",
+        "message_type": "command",
+        "receiver": "Hub",
+        "sender": "Client"
+    },
+    "topic": "u_python/Hub"
+}
+
+[read_GPIOs]
+{
+    "message": {
+        "command": "read GPIOs",
+        "correlation_id": "2017-02-10 23:35:51.917100",
+        "kwargs": {
+            "pins": [
+                5,
+                12,
+                13,
+                14,
+                15,
+                16
+            ]
+        },
+        "message_id": "2017-02-10 23:35:51.917100",
+        "message_type": "command",
+        "need_result": true,
+        "receiver": "Hub",
+        "sender": "Client"
+    },
+    "topic": "u_python/Hub"
+}
+
+[roll call]
+{
+    "message": {
+        "correlation_id": "2017-02-10 23:35:51.932100",
+        "function": "check_in",
+        "kwargs": {
+            "caller": "Client"
+        },
+        "message_id": "2017-02-10 23:35:51.932100",
+        "message_type": "function",
+        "receiver": "Hub",
+        "sender": "Client"
+    },
+    "topic": "u_python/Hub"
+}
+
+[test eval]
+{
+    "message": {
+        "correlation_id": "2017-02-10 23:35:51.947100",
+        "message_id": "2017-02-10 23:35:51.947100",
+        "message_type": "eval",
+        "need_result": true,
+        "receiver": "Hub",
+        "sender": "Client",
+        "to_evaluate": "2+3"
+    },
+    "topic": "u_python/Hub"
+}
+
+[test exec]
+{
+    "message": {
+        "correlation_id": "2017-02-10 23:35:51.959100",
+        "message_id": "2017-02-10 23:35:51.959100",
+        "message_type": "exec",
+        "receiver": "Hub",
+        "sender": "Client",
+        "to_exec": "print('Testing exec !')"
+    },
+    "topic": "u_python/Hub"
+}
+
+[write_GPIOs]
+{
+    "message": {
+        "command": "write GPIOs",
+        "correlation_id": "2017-02-10 23:35:51.970100",
+        "kwargs": {
+            "pins_and_values": [
+                [
+                    2,
+                    0
+                ],
+                [
+                    2,
+                    1
+                ],
+                [
+                    2,
+                    0
+                ]
+            ]
+        },
+        "message_id": "2017-02-10 23:35:51.970100",
+        "message_type": "command",
+        "receiver": "Hub",
+        "sender": "Client"
+    },
+    "topic": "u_python/Hub"
+}

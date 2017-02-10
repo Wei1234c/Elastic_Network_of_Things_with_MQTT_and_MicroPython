@@ -67,16 +67,21 @@ class Worker(message_client.Message_client,
 
     def on_receive(self, data):        
         super().on_receive(data)
-        self.message = self.decode_message(self.message)
-        print('Message:\n{}\n'.format(self.get_OrderedDict(self.message)))
-        self.append_received_message(self.message)
-        self.process_messages()
+        gc.collect()
+        if self.message:
+            try:
+                self.message = self.decode_message(self.message)
+                print('Message:\n{}\n'.format(self.get_OrderedDict(self.message)))
+                self.append_received_message(self.message)
+                self.process_messages()
+            except Exception as e:
+                print(e)
         
         
     def process_messages(self):
+        gc.collect()
         if config.IS_MICROPYTHON:
             print('[Memory - free: {}   allocated: {}]'.format(gc.mem_free(), gc.mem_alloc()))
-        gc.collect()
         
         time_stamp = str(self.now())
         
