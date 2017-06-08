@@ -21,6 +21,7 @@ class Message_client:
         self.addr = self.server_address
         self.parent = None
         self.message = None
+        self.receive_cycles = 0
 
         self.status = {'Datatransceiver ready': False,
                        'Is connected': False,
@@ -111,12 +112,20 @@ class Message_client:
                         raise e                            
                 elif isinstance(e, ConnectionResetError):
                     raise e
-
-                # Receiving process timeout.
-                self.mqtt_client.ping()
-                self.process_messages()                
                 
-
+                # Receiving process timeout.
+                if self.receive_cycles % config.PING_BROKER_TO_KEEP_ALIVE_EVERY_CLIENT_RECEIVE_CYCLES == 0:
+                    self.mqtt_client.ping()
+                    self.receive_cycles = 0
+                    
+                self.receive_cycles += 1
+                self.process_messages()    
+                
+                
+    def process_messages(self):
+        pass
+        
+        
     def receive_one_cycle(self):
         try:
             self.mqtt_client.check_msg()

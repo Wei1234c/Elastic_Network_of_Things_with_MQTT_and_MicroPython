@@ -21,4 +21,4 @@ def write_GPIOs_pins(pins_and_values):
     for pin_id, value in pins_and_values:
         the_pin = get_output_pin(pin_id, mode = machine.Pin.OUT)
         the_pin.value(value)
-    return read_GPIOs_pins(pins_and_values.keys())
+        

@@ -1,4 +1,5 @@
 
+
 INITIAL_WEIGHT = 0
 ACTION_POTENTIAL = 1
 RESTING_POTENTIAL = 0
@@ -6,7 +7,7 @@ POLARIZATION_SECONDS = 0.5
 REFRACTORY_PERIOD = 0.1
 
 import worker_upython
-import led
+
 
 class Worker(worker_upython.Worker):
     
@@ -149,7 +150,7 @@ class Worker(worker_upython.Worker):
         
 
     def kick(self, neuron_id):
-        self.log('{0} is kicking {1}.'.format(neuron_id, self.name)) 
+        self.log('{0} is kicking {1}.'.format(neuron_id, self.name))     
         
         # recording input
         self.receiveInput(neuron_id)    
@@ -162,7 +163,6 @@ class Worker(worker_upython.Worker):
             # refractory period is expired, need to re-evaluate       
             if sum_of_weighted_inputs >= threshold:
                 self.fire() 
-                
         else: 
             # currently in refractory period
             self.log('{0} is still in refractory-period.'.format(self.name))
@@ -180,21 +180,18 @@ class Worker(worker_upython.Worker):
                     self.log('{0} is still in refractory_period at resting potential, then a neuron {1} kicks in, now sum_of_weighted_inputs < threshold.'.format(self.name, neuron_id))    
                     
        
-    def fire(self, ):          
-        led.blink_on_board_led(times = 1, 
-                               on_seconds = 0.1,
-                               off_seconds = 0.1) 
+    def fire(self, ):    
+        self.blink_led(times = 1, on_seconds = 0.1, off_seconds = 0.1)
         
         self.log('{0} fires.'.format(self.name))
         self.setOutputActive()  
         
         # kick down-stream neurons
-        connections = self.getConnections()
-        
+        connections = self.getConnections() 
         for connection in connections.keys():            
             # send message to kick other neurons
             message = {'receiver': connection,
                        'message_type': 'function',
                        'function': 'kick',
                        'kwargs': {'neuron_id': self.name}}
-            self.request(message)            
+            self.request(message)
