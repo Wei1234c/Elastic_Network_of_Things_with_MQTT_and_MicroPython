@@ -142,6 +142,7 @@ class Message_client:
     def send_message(self, receiver, message_string):
         print('\nSending {} bytes'.format(len(message_string)))
         topic = '/'.join([config.GROUP_NAME, receiver])
+        self.mqtt_client.sock.settimeout(config.CLIENT_RECEIVE_TIME_OUT_SECONDS)
         self.mqtt_client.publish(topic = topic,
                                  msg = message_string.encode(),
                                  retain = False,

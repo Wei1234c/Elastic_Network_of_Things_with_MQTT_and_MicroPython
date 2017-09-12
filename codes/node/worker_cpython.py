@@ -1,6 +1,5 @@
 # coding: utf-8
 
-
 import datetime
 import worker
 
@@ -30,5 +29,5 @@ class Worker(worker.Worker):
         return 'Not applicable.'
         
     
-    def blink_led(self, times = 1, forever = False, on_seconds = 0.5, off_seconds = 0.5):
+    def blink_led(self, times = 1, on_seconds = 0.1, off_seconds = 0.1, forever = False):
         return 'Not applicable.'

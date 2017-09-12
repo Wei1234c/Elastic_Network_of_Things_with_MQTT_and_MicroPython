@@ -1,6 +1,5 @@
 # coding: utf-8
 
-
 import time
 import worker
 import led
@@ -35,7 +34,7 @@ class Worker(worker.Worker):
         return u_python.write_GPIOs_pins(pins_and_values)
         
     
-    def blink_led(self, times = 1, forever = False, on_seconds = 0.5, off_seconds = 0.5):
+    def blink_led(self, times = 1, on_seconds = 0.1, off_seconds = 0.1, forever = False):
         led.blink_on_board_led(times = times, 
                                forever = forever,
                                on_seconds = on_seconds,
