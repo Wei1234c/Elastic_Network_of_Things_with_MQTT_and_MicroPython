@@ -5,7 +5,7 @@ import socket
 import gc
 gc.collect()
 import simple as umqtt
-import config
+import config_mqtt
 
 
 class Message_client:
@@ -15,7 +15,7 @@ class Message_client:
 
         self.mqtt_client = umqtt.MQTTClient(client_id = self.name,
                                             server = self.server_address[0], port = self.server_address[1],
-                                            user = config.USERNAME, password = config.PASSWORD,
+                                            user = config_mqtt.USERNAME, password = config_mqtt.PASSWORD,
                                             keepalive=60,
                                             ssl=False, ssl_params={})
         self.addr = self.server_address
@@ -65,19 +65,19 @@ class Message_client:
 
             except Exception as e:
                 print(e)
-                time.sleep(config.CLIENT_RETRY_TO_CONNECT_AFTER_SECONDS)
+                time.sleep(config_mqtt.CLIENT_RETRY_TO_CONNECT_AFTER_SECONDS)
 
 
     def on_connect(self):
-        self.subscribe(topic = '/'.join([config.GROUP_NAME, self.name]), qos = config.QOS_LEVEL)
-        self.subscribe(topic = '/'.join([config.GROUP_NAME, config.SERVER_NAME]), qos=config.QOS_LEVEL)
+        self.subscribe(topic = '/'.join([config_mqtt.GROUP_NAME, self.name]), qos = config_mqtt.QOS_LEVEL)
+        self.subscribe(topic = '/'.join([config_mqtt.GROUP_NAME, config_mqtt.SERVER_NAME]), qos=config_mqtt.QOS_LEVEL)
         print('\n[Connected: {0}]'.format(self.server_address))
         self.status['Is connected'] = True
         self.mqtt_client.check_msg()
         self.receive()
 
 
-    def subscribe(self, topic, qos = config.QOS_LEVEL):
+    def subscribe(self, topic, qos = config_mqtt.QOS_LEVEL):
         self.mqtt_client.subscribe(topic = topic, qos = qos)
 
 
@@ -102,19 +102,19 @@ class Message_client:
             if self.stopped(): break
 
             try:
-                self.mqtt_client.sock.settimeout(config.CLIENT_RECEIVE_TIME_OUT_SECONDS)
+                self.mqtt_client.sock.settimeout(config_mqtt.CLIENT_RECEIVE_TIME_OUT_SECONDS)
                 res = self.mqtt_client.wait_msg()
                 
             except Exception as e:
                 # Connection reset.
-                if config.IS_MICROPYTHON:
-                    if str(e) == config.MICROPYTHON_MQTT_CONNECTION_RESET_ERROR_MESSAGE:
+                if config_mqtt.IS_MICROPYTHON:
+                    if str(e) == config_mqtt.MICROPYTHON_MQTT_CONNECTION_RESET_ERROR_MESSAGE:
                         raise e                            
                 elif isinstance(e, ConnectionResetError):
                     raise e
                 
                 # Receiving process timeout.
-                if self.receive_cycles % config.PING_BROKER_TO_KEEP_ALIVE_EVERY_CLIENT_RECEIVE_CYCLES == 0:
+                if self.receive_cycles % config_mqtt.PING_BROKER_TO_KEEP_ALIVE_EVERY_CLIENT_RECEIVE_CYCLES == 0:
                     self.mqtt_client.ping()
                     self.receive_cycles = 0
                     
@@ -141,10 +141,10 @@ class Message_client:
             
     def send_message(self, receiver, message_string):
         print('\nSending {} bytes'.format(len(message_string)))
-        topic = '/'.join([config.GROUP_NAME, receiver])
-        self.mqtt_client.sock.settimeout(config.CLIENT_RECEIVE_TIME_OUT_SECONDS)
+        topic = '/'.join([config_mqtt.GROUP_NAME, receiver])
+        self.mqtt_client.sock.settimeout(config_mqtt.CLIENT_RECEIVE_TIME_OUT_SECONDS)
         self.mqtt_client.publish(topic = topic,
                                  msg = message_string.encode(),
                                  retain = False,
-                                 qos = config.QOS_LEVEL)
+                                 qos = config_mqtt.QOS_LEVEL)
         self.mqtt_client.check_msg()

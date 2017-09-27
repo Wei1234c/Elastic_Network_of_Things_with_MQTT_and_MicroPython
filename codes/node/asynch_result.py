@@ -1,7 +1,7 @@
 # coding: utf-8
 
 import time
-import config
+import config_mqtt
 
 
 class Asynch_result:
@@ -12,8 +12,8 @@ class Asynch_result:
         self.yield_to = yield_to
         
          
-    def get(self, timeout = config.ASYNCH_RESULT_TIMEOUT):
-        # time.sleep(config.ASYNCH_RESULT_WAIT_BEFORE_GET)
+    def get(self, timeout = config_mqtt.ASYNCH_RESULT_TIMEOUT):
+        # time.sleep(config_mqtt.ASYNCH_RESULT_WAIT_BEFORE_GET)
         start_time = time.time()
         request = self._requests_need_result.get(self.correlation_id)
         

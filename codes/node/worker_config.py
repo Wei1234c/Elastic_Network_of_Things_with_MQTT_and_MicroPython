@@ -1,9 +1,9 @@
 # coding: utf-8
 
-import config
+import config_mqtt
 
 
-if config.IS_MICROPYTHON:
+if config_mqtt.IS_MICROPYTHON:
     import machine
     import ubinascii
     unique_id = ubinascii.hexlify(machine.unique_id()).decode() 

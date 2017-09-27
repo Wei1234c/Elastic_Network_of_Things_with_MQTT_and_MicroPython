@@ -1,10 +1,10 @@
 # coding: utf-8
 
 import json
-import config
+import config_mqtt
 
 
-if config.IS_MICROPYTHON:
+if config_mqtt.IS_MICROPYTHON:
     from ucollections import OrderedDict
 else:
     from collections import OrderedDict

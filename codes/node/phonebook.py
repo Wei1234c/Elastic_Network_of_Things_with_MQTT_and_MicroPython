@@ -1,6 +1,6 @@
 # coding: utf-8
 
-import config
+import config_mqtt
        
 
 class Phonebook:    
@@ -12,7 +12,7 @@ class Phonebook:
     def roll_call(self):
         self.contacts = {}
         message = self.format_message(sender=self.name,
-                                      receiver=config.SERVER_NAME,
+                                      receiver=config_mqtt.SERVER_NAME,
                                       message_type='function',
                                       function='check_in',
                                       kwargs={'caller': self.name})

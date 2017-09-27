@@ -2,7 +2,7 @@
 
 import time
 import socket
-import config
+import config_mqtt
 import data_transceiver
 
 
@@ -58,7 +58,7 @@ class Message_client:
                 
             except Exception as e:
                 print(e)
-                time.sleep(config.CLIENT_RETRY_TO_CONNECT_AFTER_SECONDS)
+                time.sleep(config_mqtt.CLIENT_RETRY_TO_CONNECT_AFTER_SECONDS)
             
     
     def on_connect(self):
@@ -79,14 +79,14 @@ class Message_client:
     
     def receive(self):
         print('[Listen to messages]')
-        self.socket.settimeout(config.CLIENT_RECEIVE_TIME_OUT_SECONDS)
+        self.socket.settimeout(config_mqtt.CLIENT_RECEIVE_TIME_OUT_SECONDS)
         
         while True:
             if self.stopped(): break    
                 
             try: 
                 data = None
-                data = self.socket.recv(config.BUFFER_SIZE)
+                data = self.socket.recv(config_mqtt.BUFFER_SIZE)
                 if len(data) == 0:  # If Broker shut down, need this line to close socket
                     self.on_close()
                     break
@@ -94,8 +94,8 @@ class Message_client:
                 
             except Exception as e:                
                 # Connection reset.
-                if config.IS_MICROPYTHON:
-                    if str(e) == config.MICROPYTHON_SOCKET_CONNECTION_RESET_ERROR_MESSAGE:
+                if config_mqtt.IS_MICROPYTHON:
+                    if str(e) == config_mqtt.MICROPYTHON_SOCKET_CONNECTION_RESET_ERROR_MESSAGE:
                         raise e
                 elif isinstance(e, ConnectionResetError):
                     raise e
@@ -107,7 +107,7 @@ class Message_client:
     def receive_one_cycle(self):
         try: 
             data = None
-            data = self.socket.recv(config.BUFFER_SIZE)
+            data = self.socket.recv(config_mqtt.BUFFER_SIZE)
             if len(data) == 0:  # If Broker shut down, need this line to close socket
                 self.on_close()
             self.on_receive(data)

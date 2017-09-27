@@ -1,7 +1,7 @@
 # coding: utf-8
 
 import time
-import config
+import config_mqtt
        
 
 class Queue_manager:
@@ -15,7 +15,7 @@ class Queue_manager:
         
     def whether_requests_time_out(self):
         now = time.time()
-        if now - self.latest_request_time > config.REQUESTS_NEED_RESULT_TIME_TO_LIVE:
+        if now - self.latest_request_time > config_mqtt.REQUESTS_NEED_RESULT_TIME_TO_LIVE:
             self._requests_need_result = {}
         self.latest_request_time = now
         

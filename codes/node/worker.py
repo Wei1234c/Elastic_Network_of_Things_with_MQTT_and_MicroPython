@@ -1,9 +1,9 @@
 # coding: utf-8
 
 import gc
-import config
+import config_mqtt
 
-if config.IS_MICROPYTHON:
+if config_mqtt.IS_MICROPYTHON:
     import mqtt_client_umqtt as message_client
 else:
     import mqtt_client_paho as message_client
@@ -45,7 +45,7 @@ class Worker(message_client.Message_client,
     def set_connection_name(self):
         # set my name
         message = self.format_message(sender = self.name,
-                                      receiver = config.SERVER_NAME,
+                                      receiver = config_mqtt.SERVER_NAME,
                                       message_type = 'command', 
                                       command = 'set connection name',
                                       kwargs = {'name': self.name}, 
@@ -80,7 +80,7 @@ class Worker(message_client.Message_client,
         
     def process_messages(self):
         gc.collect()
-        if config.IS_MICROPYTHON:
+        if config_mqtt.IS_MICROPYTHON:
             print('[Memory - free: {}   allocated: {}]'.format(gc.mem_free(), gc.mem_alloc()))
         
         time_stamp = str(self.now())

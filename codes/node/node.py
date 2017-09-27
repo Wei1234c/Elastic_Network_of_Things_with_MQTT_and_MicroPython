@@ -6,10 +6,10 @@ import sys
 if not sys.implementation.name == 'micropython':
     sys.path.append(os.path.abspath(os.path.join(os.path.pardir, 'shared')))
 
-import config
+import config_mqtt
 import commander
 
-if config.IS_MICROPYTHON:
+if config_mqtt.IS_MICROPYTHON:
     import simple as umqtt  # preload to avoid memory fragment problem.
     import worker_upython as worker_impl
     # import worker_neuron as worker_impl
@@ -21,7 +21,7 @@ class Node(commander.Commander):
     
     def __init__(self):
         super().__init__()
-        self.worker = worker_impl.Worker(config.BROKER_HOST, config.HUB_PORT)
+        self.worker = worker_impl.Worker(config_mqtt.BROKER_HOST, config_mqtt.HUB_PORT)
         self.worker.set_parent(self)
 
         

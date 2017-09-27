@@ -3,15 +3,15 @@
 import time
 import socket
 import paho.mqtt.client as mqtt
-import config
+import config_mqtt
 
 
 class Message_client:
     # Object control
     def __init__(self, server_ip, server_port):
         self.mqtt_client = mqtt.Client(client_id = self.name)  # , clean_session = True, userdata=None, protocol=MQTTv311, transport="tcp")
-        self.mqtt_client.username_pw_set(config.USERNAME, config.PASSWORD)
-        self.mqtt_client.max_inflight_messages_set(config.MAX_INFLIGHT_MESSAGES)
+        self.mqtt_client.username_pw_set(config_mqtt.USERNAME, config_mqtt.PASSWORD)
+        self.mqtt_client.max_inflight_messages_set(config_mqtt.MAX_INFLIGHT_MESSAGES)
         self.parent = None
         self.message = None
         self.server_address = socket.getaddrinfo(server_ip, server_port)[-1][-1]        
@@ -59,20 +59,20 @@ class Message_client:
                 self.message = None
                 self.mqtt_client.connect(host=self.server_address[0],
                                          port=self.server_address[1],
-                                         keepalive=config.KEEPALIVE)
+                                         keepalive=config_mqtt.KEEPALIVE)
                 self.status['Datatransceiver ready'] = True
                 self.on_connect()
 
             except Exception as e:
                 print(e)
-                time.sleep(config.CLIENT_RETRY_TO_CONNECT_AFTER_SECONDS)
+                time.sleep(config_mqtt.CLIENT_RETRY_TO_CONNECT_AFTER_SECONDS)
             
 
     def on_connect_mqtt(self, client, userdata, flags, rc):
         # print("Connected with result code {}".format(str(rc)))
         # print('\n[Connected: {0}]'.format(self.server_address))
-        self.mqtt_client.subscribe(topic = '/'.join([config.GROUP_NAME, self.name]), qos = config.QOS_LEVEL)
-        self.mqtt_client.subscribe(topic='/'.join([config.GROUP_NAME, config.SERVER_NAME]), qos=config.QOS_LEVEL)
+        self.mqtt_client.subscribe(topic = '/'.join([config_mqtt.GROUP_NAME, self.name]), qos = config_mqtt.QOS_LEVEL)
+        self.mqtt_client.subscribe(topic='/'.join([config_mqtt.GROUP_NAME, config_mqtt.SERVER_NAME]), qos=config_mqtt.QOS_LEVEL)
 
 
     def on_connect(self):
@@ -121,13 +121,13 @@ class Message_client:
             
     def receive(self):
         print('[Listen to messages]')
-        # self.socket.settimeout(config.CLIENT_RECEIVE_TIME_OUT_SECONDS)
+        # self.socket.settimeout(config_mqtt.CLIENT_RECEIVE_TIME_OUT_SECONDS)
         
         while True:
             if self.stopped(): break    
                 
             try:
-                self.mqtt_client.loop(timeout = config.CLIENT_RECEIVE_TIME_OUT_SECONDS)
+                self.mqtt_client.loop(timeout = config_mqtt.CLIENT_RECEIVE_TIME_OUT_SECONDS)
                 self.process_messages()
             except Exception as e: 
                 print(e)
@@ -135,7 +135,7 @@ class Message_client:
     
     def receive_one_cycle(self):
         try:
-            # self.mqtt_client.loop(timeout = config.CLIENT_RECEIVE_TIME_OUT_SECONDS)
+            # self.mqtt_client.loop(timeout = config_mqtt.CLIENT_RECEIVE_TIME_OUT_SECONDS)
             self.process_messages()
         except Exception as e:                
             pass
@@ -149,7 +149,7 @@ class Message_client:
 
     def send_message(self, receiver, message_string): 
         print('\nSending {} bytes'.format(len(message_string)))
-        topic = '/'.join([config.GROUP_NAME, receiver])
+        topic = '/'.join([config_mqtt.GROUP_NAME, receiver])
         self.mqtt_client.publish(topic = topic,
                                  payload = message_string.encode(),
-                                 qos = config.QOS_LEVEL, retain = False)        
+                                 qos = config_mqtt.QOS_LEVEL, retain = False)        
