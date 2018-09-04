@@ -9,7 +9,7 @@ def wait_for_wifi():
         print('connecting to network...')
         sta_if.active(True)        
         # sta_if.connect(SSID, PASSWORD)
-        # sta_if.connect('SSID', '')        
+        sta_if.connect('Wei RN4', '51557010')        
         while not sta_if.isconnected():
             pass
     print('Network configuration:', sta_if.ifconfig())

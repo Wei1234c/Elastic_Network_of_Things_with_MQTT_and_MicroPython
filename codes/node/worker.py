@@ -115,7 +115,7 @@ class Worker(message_client.Message_client,
                         self.send_message(reply_message)
                     
                 except Exception as e:
-                    print(e, 'No result to return.')
+                    print(e, 'Fail to return result.')
 
         
     def request(self, message):

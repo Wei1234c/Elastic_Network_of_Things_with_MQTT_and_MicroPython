@@ -6,8 +6,8 @@ import config_mqtt
 if config_mqtt.IS_MICROPYTHON:
     import machine
     import ubinascii
-    unique_id = ubinascii.hexlify(machine.unique_id()).decode() 
-    WORKER_NAME = 'NodeMCU_' + unique_id
+    uuid = ubinascii.hexlify(machine.unique_id()).decode() 
+    WORKER_NAME = 'NodeMCU_' + uuid
     
     # WORKER_NAME = 'n_Lambda'
     # WORKER_NAME = 'n_Alpha'    
